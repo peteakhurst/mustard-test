@@ -1,38 +1,238 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  } 
+  100% {
+      opacity: 1;
+   }
+}
+
 .App {
+  font-family: sans-serif;
+  background: #F4F4F4;
+  min-height: 100vh;
+  color: #122431;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: #122431;
+  height: 80px;
+  box-shadow: 3px 4px 0px 0px #003A6B;
+}
+.h-bg {
+  background: #fafafa;
+}
+
+ul  {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin: 0 auto;
+}
+
+ul li a{
+  font-weight: bold;
+  color: #ffffff; 
+  font-size: 18px;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.wrapper {
+  padding: 150px 15px;
+  margin: 0 auto;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-left {
+  width: 50%;
+  color: #000000;
+}
+
+.flex-left p {
+  color: #122431;
+  font-weight: normal;
+  margin-bottom: 5em;
+}
+
+.flex-left button {
+  
+  background: #003A6B;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 0.85em 0.75em;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 3px 4px 0px 0px #122431 ;
+  transition: all 0.5s;
+  margin: 0;
+}
+
+.flex-left button:hover {
+  background: #122431;
+  box-shadow: 0px 24px 38px 3px rgba(0,0,0,0.14) , 0px 9px 46px 8px rgba(0,0,0,0.12) , 0px 11px 15px -7px rgba(0,0,0,0.2) ; 
+}
+
+.flex-right {
+  width: 50%;
+}
+
+.image-wrapper {
+  height: auto;
+  width: 100%;
+}
+.image-wrapper img {
+  height: auto;
+  width: 100%;
+  box-shadow: 3px 4px 0px 0px #003A6B ;
+  border-radius: 3%;
+}
+
+h1 {
+  color: #122431;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+p {
+  position: relative;
+  font-weight: bold;
+  font-size: 18px;
+  top: 40px;
+  color: #ffffff;
+  bottom: 0;
+  left: 0;
+  right: 0;
   align-items: center;
+}
+
+.currency-font {
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+.number-inputs {
+  display: grid;
+  grid-template-columns: 210px 210px 210px 450px;
+  grid-gap: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+    font-size: 30px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    background: transparent;
+    font-weight: bold;
+    margin-left: 0;
+    margin-top: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.btn-container  {
+  position: absolute;
+    left: 158px;
+    right: 0;
+    bottom: 0;
+    top: 70px;
+}
+
+button {
+  margin: 10px 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.ppw input {
+  font-weight: bold;
+  color: #122431;
+}
+
+.container {
+  position: relative;
+  font-size: 30px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 6px 0px rgba(50,50,93,0.11) , 0px 1px 3px 0px rgba(0,0,0,0.08);
+    background: #122431;
+    color: white;
+}
+
+.b-text{
+  color: #000000;
+}
+
+span {
+  position: relative;
+  margin-top: 15px;
+}
+
+.fpp span:before {
+    content: "$";
+    color: white;
+    position: absolute;
+    font-weight: bold;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    text-align: center;
+}
+
+.ppw {
+  color: #003A6B;
+  background: white;
+}
+
+.ppy {
+  background: linear-gradient(90deg, #75B9A6, #3C8E78);
+  width: 100%;
+}
+
+.prpy {
+  background: linear-gradient(90deg, #D3A249, #F1C172);
+  width: 100%;
+}
+
+
+@media screen and (max-width: 600px) {
+  .flex-container {
+    flex-direction:column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .flex-left, 
+  .flex-right {
+    width: 100%;
+    margin: 2em 0;
+  }
+
+  .number-inputs {
+    grid-template-columns: 1fr;
   }
 }
