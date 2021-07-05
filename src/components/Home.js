@@ -16,7 +16,7 @@ function Page() {
                         </div>
                         <div class="flex-right">
                             <div className="image-wrapper">
-                                <img src={Patient} alt="Image of a model patient made from plastic" />
+                                <img src={Patient} alt="Model patient made from plastic" />
                             </div>
                         </div>
                     </div>
